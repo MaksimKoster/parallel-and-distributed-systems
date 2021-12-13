@@ -5,5 +5,7 @@ import org.apache.mapreduce.Partitioner;
 
 public class AirPartitioner extends Partitioner<AirWritableComparable, Text>{
     @Override
-    public int getPartition()
+    public int getPartition(AirWritableComparable key, Text value, int numReduceTasks){
+        return key.getAirportID() % numReduceTasks;
+    }
 }
