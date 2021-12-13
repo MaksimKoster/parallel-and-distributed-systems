@@ -30,5 +30,6 @@ public class AirWritableComparable implements WritableComparable{
         this.indicator = indicator;
     }
 
-    @override 
+    @Override
+    public void
 }
