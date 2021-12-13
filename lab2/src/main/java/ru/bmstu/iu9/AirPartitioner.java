@@ -1,4 +1,7 @@
 package ru.bmstu.iu9;
 
-public class AirPartitioner {
+import org.apache.hadoop.io.Text;
+import org.apache.mapreduce.Partitioner;
+
+public class AirPartitioner extends Partitioner{
 }
