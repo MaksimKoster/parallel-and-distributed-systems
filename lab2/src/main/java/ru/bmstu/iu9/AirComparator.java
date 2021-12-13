@@ -3,8 +3,8 @@ package ru.bmstu.iu9;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-public class AirCompartor extends WritableComparable{
-    protected AirCompartor(){
+public class AirComparator extends WritableComparable{
+    protected AirComparator(){
         super(AirWritableComparable.class, true);
     }
 
