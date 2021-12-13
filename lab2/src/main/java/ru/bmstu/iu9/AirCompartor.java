@@ -10,7 +10,10 @@ public class AirCompartor extends WritableComparable{
 
     @Override
     public int compare(WritableComparable air1, WritableComparable air2){
-        
+        AirWritableComparable airport1 = (AirWritableComparable) air1;
+        AirWritableComparable airport2 = (AirWritableComparable) air2;
+
+        return Integer.compare(airport1.getAirportID(),airport2.getAirportID());
     }
 
 }
