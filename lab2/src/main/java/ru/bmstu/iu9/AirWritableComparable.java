@@ -49,5 +49,20 @@ public class AirWritableComparable implements WritableComparable{
                 ", indicator=" + indicator + "}";
     }
 
+    @Override
+    public int compareTo(Object t){
+        AirWritableComparable air2 = (AirWritableComparable)t;
+        if (this.airportID > air2.airportID) return 1;
+        if (this.airportID < air2.airportID) return -1;
+        return Integer.compare(this.indicator, air2.indicator);
+    }
+
+    @Override
+    public boolean equals(Object t){
+        if(this == t) return true;
+        if (t == null || getClass() != t.getClass()) return false;
+        AirWritableComparable air2 = (AirWritableComparable)t;
+        return (airportID == air2.airportID) && (indicator == air2.indicator);
+    }
 
 }
