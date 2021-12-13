@@ -9,6 +9,8 @@ public class AirCompartor extends WritableComparable{
     }
 
     @Override
-    public int compare
+    public int compare(WritableComparable air1, WritableComparable air2){
+        
+    }
 
 }
