@@ -64,5 +64,6 @@ public class AirWritableComparable implements WritableComparable{
         AirWritableComparable air2 = (AirWritableComparable)t;
         return (airportID == air2.airportID) && (indicator == air2.indicator);
     }
+    
 
 }
