@@ -1,1 +1,7 @@
+ru/bmstu/iu9/AirApp.class
 ru/bmstu/iu9/AirReduce.class
+ru/bmstu/iu9/FlightMapper.class
+ru/bmstu/iu9/AirMapper.class
+ru/bmstu/iu9/AirComparator.class
+ru/bmstu/iu9/AirPartitioner.class
+ru/bmstu/iu9/AirWritableComparable.class
