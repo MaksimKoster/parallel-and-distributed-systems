@@ -15,7 +15,8 @@ public class AirReduce extends Reducer<AirWritableComparable, Text, Text, Text> 
         float min = -1.0f;
 
         while(valuesIter.hasNext()){
-            float delayTime = Float.parseFloat()
+            float delayTime = Float.parseFloat(valuesIter.next().toString());
+            
         }
 
     }
