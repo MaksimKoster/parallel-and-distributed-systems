@@ -15,9 +15,13 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
         String[] params = value.toString().split("\",\"");
-        int airID;
+        
         if (key.get() > 0){
-            airID = Integer.parseInt(params[ID_INDEX].split("\""))
+            String airName;
+            int airID;
+            airID = Integer.parseInt(params[ID_INDEX].split("\"")[1]);
+            String airName = params[NAME_INDEX].split("\"")[0];
+
         }
     }
 }
