@@ -9,5 +9,11 @@ import java.io.IOException;
 
 public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable, Text>{
     public static int AIRPORT_INDCATOR = 0;
-    public 
+    public static int ID_INDEX = 0;
+    public static int NAME_INDEX = 1;
+
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
+        
+    }
 }
