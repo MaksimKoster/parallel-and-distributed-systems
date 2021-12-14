@@ -9,6 +9,8 @@ public class AirWritableComparable implements WritableComparable{
     private int airportID;
     private int indicator;
 
+    public AirWritableComparable(){}
+
     public void setAirportID(int airportID){
         this.airportID = airportID;
     }
@@ -64,6 +66,10 @@ public class AirWritableComparable implements WritableComparable{
         AirWritableComparable air2 = (AirWritableComparable)t;
         return (airportID == air2.airportID) && (indicator == air2.indicator);
     }
-    
+
+    @Override
+    public int hashcode(){
+        return Objects.hash(airportID, indicator);
+    }
 
 }
