@@ -15,6 +15,6 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
-        String[] params = value.toString().split(SPLIT)
+        String[] params = value.toString().split(SPLIT);
     }
 }
