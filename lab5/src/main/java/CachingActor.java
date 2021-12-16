@@ -23,6 +23,11 @@ public class CachingActor extends AbstractActor {
                 .build();
     }
 
+    @Override
+    public Receive createReceive() {
+        return null;
+    }
+
     public static class GetMessage{
         private String url;
 
