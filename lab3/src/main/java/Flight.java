@@ -19,7 +19,6 @@ public class Flight implements Serializable {
         this.initialAirportID = initialAirportID;
     }
 
-
     public Tuple2<Tuple2<Integer, Integer>, Flight> getTupleWithAirports(){
         return new Tuple2<>(new Tuple2<>(initialAirportID, destAirportID), this);
     }
@@ -33,6 +32,4 @@ public class Flight implements Serializable {
                 list[CANCELLED_INDEX].isEmpty()
         );
     }
-    
-
 }
