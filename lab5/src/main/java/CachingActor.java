@@ -1,9 +1,16 @@
 import akka.actor.AbstractActor;
+import akka.japi.pf.ReceiveBuilder;
 
 public class CachingActor extends AbstractActor {
 
     @Override
-    public Receive createRecieve()
+    public Receive createRecieve(){
+        return ReceiveBuilder.create()
+                .match(StoreMessage.class , m ->
+                {
+
+                })
+    }
 
     public static class GetMessage{
         private String url;
