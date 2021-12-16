@@ -4,15 +4,23 @@ import akka.japi.pf.ReceiveBuilder;
 import java.util.HashMap;
 
 public class CachingActor extends AbstractActor {
-    HashMap
+    HashMap<String, Long> cache = new HashMap<>();
 
     @Override
     public Receive createRecieve(){
         return ReceiveBuilder.create()
                 .match(StoreMessage.class , m ->
                 {
-                   
+                   cache.put(m.url, m.res);
                 })
+                .match(GetMessage.class, m ->
+                {
+                    Long res = cache.get(m.getUrl());
+                    if (res != null){
+                        sender().tell(res, self());
+                    }
+                })
+                .build();
     }
 
     public static class GetMessage{
