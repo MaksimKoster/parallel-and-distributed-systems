@@ -7,11 +7,11 @@ public class CachingActor extends AbstractActor {
     HashMap<String, Long> cache = new HashMap<>();
 
     @Override
-    public Receive createReceieve(){
+    public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(StoreMessage.class , m ->
                 {
-                   cache.put(m.url, m.res);
+                    cache.put(m.url, m.res);
                 })
                 .match(GetMessage.class, m ->
                 {
@@ -21,11 +21,6 @@ public class CachingActor extends AbstractActor {
                     }
                 })
                 .build();
-    }
-
-    @Override
-    public Receive createReceive() {
-        return null;
     }
 
     public static class GetMessage{
