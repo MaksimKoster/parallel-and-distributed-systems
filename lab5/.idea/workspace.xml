@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5f3dbb3-ca3c-4c08-87c3-c12cff29449e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/CachingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CachingActor.java" afterDir="false" />
-    </list>
+    <list default="true" id="d5f3dbb3-ca3c-4c08-87c3-c12cff29449e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
