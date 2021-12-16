@@ -7,7 +7,7 @@ public class CachingActor extends AbstractActor {
     HashMap<String, Long> cache = new HashMap<>();
 
     @Override
-    public Receive createRecieve(){
+    public Receive createReceieve(){
         return ReceiveBuilder.create()
                 .match(StoreMessage.class , m ->
                 {
