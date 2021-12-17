@@ -8,13 +8,17 @@ import akka.http.javadsl.server.Route;
 import akka.japi.Pair;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
-import akka.stream.javadsl.Flow;
+import akka.stream.javadsl.*;
 import com.sun.xml.internal.ws.util.CompletedFuture;
 
 import static org.asynchttpclient.Dsl.*;
+import org.asynchttpclient.AsyncHttpClient;
+import org.asynchttpclient.Request;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.regex.Pattern;
@@ -51,10 +55,29 @@ public class Router {
                                                 return list;
                                             });
                                             Flow<Pair<String, Integer>, Long, NotUsed> flowTimer = flowConc.mapAsync(1, reqEntity -> {
-                                                AsyncHttpclient asyncHttpclient = asyncHttpClient();
-                                            })
+                                                AsyncHttpClient asyncHttpclient = asyncHttpClient();
+                                                Request request = get(reqEntity.first()).build();
+                                                long startTime = System.currentTimeMillis();
+                                                CompletableFuture<Long> whenResponce = asyncHttpclient.executeRequest(request)
+                                                        .toCompletableFuture()
+                                                        .thenCompose(responce1 -> {
+                                                            long endTime = System.currentTimeMillis();
+                                                            System.out.println(endTime  - startTime);
+                                                            return CompletableFuture.completedFuture((endTime - startTime)/ reqEntity.second());
+                                                        });
+                                                return whenResponce;
+                                            });
+                                            Sink<Long, CompletionStage<Long>> fold = Sink.fold(0L, (agg, next) -> agg + next);
+                                            Sink<Pair<String, Integer>, CompletionStage<Long>> testSink = flowTimer.toMat(fold, Keep.right());
+                                            RunnableGraph<CompletionStage<Long>> graph = Source.from(Collections.singletonList(new Pair<>(testUrl, numOfReq))).toMat(testSink, Keep.right());
+                                            result = graph.run(materializer);
                                         }
+                                        return result;
                                     })
+                            );
+
+                            Sink<Long, CompletionStage<Long>> sink = Sink.head();
+                            RunnableGraph<C>
 
                         }))
                 )
