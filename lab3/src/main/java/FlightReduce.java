@@ -31,7 +31,7 @@ public class FlightReduce implements Serializable {
 
     public String getStatistic(){
         return "maxdelay: " + maxDelay +
-                " cancelled(%): " + (100 * (countCancelled/countFlights)) +
-                " delayed(%): " + (100 * (countDelays/ countFlights));
+                " cancelled(%): " + (100 * ((float)countCancelled/(float)countFlights)) +
+                " delayed(%): " + (100 * ((float)countDelays/(float)countFlights));
     }
 }
