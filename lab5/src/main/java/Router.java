@@ -2,6 +2,7 @@ import akka.NotUsed;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.server.Route;
 
@@ -31,25 +32,25 @@ public class Router {
     public static String PARAMETR_URL = "testUrl";
     public static String PARAMETR_COUNT = "count";
 
-    public static Route createRoute(ActorMaterializer materializer, ActorSystem system, Http http, ActorRef cacheActor){
-        return route(get(()->
+    public static Route createRoute(ActorMaterializer materializer, ActorSystem system, Http http, ActorRef cacheActor) {
+        return route(get(() ->
                 parameter(PARAMETR_URL, testUrl ->
-                        parameter(PARAMETR_COUNT, count ->{
+                        parameter(PARAMETR_COUNT, count -> {
                             int numOfReq = Integer.parseInt(count);
                             Flow<HttpRequest, HttpRequest, NotUsed> flow = Flow.of(HttpRequest.class);
                             Flow<HttpRequest, Pair<String, Integer>, NotUsed> mapped = flow.map(req -> new Pair<>(testUrl, numOfReq));
                             Flow<HttpRequest, Long, NotUsed> m = mapped.mapAsync(1, p ->
-                                    Patterns.ask(cacheActor, new CachingActor.GetMessage(testUrl), TIMEOUT).thenCompose(response ->{
+                                    Patterns.ask(cacheActor, new CachingActor.GetMessage(testUrl), TIMEOUT).thenCompose(response -> {
                                         CompletionStage<Long> result;
                                         String res = String.valueOf(response);
                                         Long resLong = Long.parseLong(res);
-                                        if(resLong != -1) {
+                                        if (resLong != -1) {
                                             result = CompletableFuture.completedFuture(resLong);
                                         } else {
                                             Flow<Pair<String, Integer>, Pair<String, Integer>, NotUsed> f = Flow.create();
-                                            Flow<Pair<String, Integer>, Pair<String, Integer>, NotUsed> flowConc = f.mapConcat(reqEntity ->{
+                                            Flow<Pair<String, Integer>, Pair<String, Integer>, NotUsed> flowConc = f.mapConcat(reqEntity -> {
                                                 ArrayList<Pair<String, Integer>> list = new ArrayList<>(0);
-                                                for (int i = 0; i < reqEntity.second(); ++i){
+                                                for (int i = 0; i < reqEntity.second(); ++i) {
                                                     list.add(reqEntity);
                                                 }
                                                 return list;
@@ -62,8 +63,8 @@ public class Router {
                                                         .toCompletableFuture()
                                                         .thenCompose(responce1 -> {
                                                             long endTime = System.currentTimeMillis();
-                                                            System.out.println(endTime  - startTime);
-                                                            return CompletableFuture.completedFuture((endTime - startTime)/ reqEntity.second());
+                                                            System.out.println(endTime - startTime);
+                                                            return CompletableFuture.completedFuture((endTime - startTime) / reqEntity.second());
                                                         });
                                                 return whenResponce;
                                             });
@@ -76,11 +77,20 @@ public class Router {
                                     })
                             );
 
+                            Flow<HttpRequest, Long, NotUsed> result = m.map(res ->{
+                                cacheActor.tell(new CachingActor.StoreMessage(testUrl, res), ActorRef.noSender());
+                            })
+
                             Sink<Long, CompletionStage<Long>> sink = Sink.head();
-                            RunnableGraph<C>
+                            RunnableGraph<CompletionStage<Long>> graph = Source.from(Collections.singletonList(HttpRequest.create())).via(result).toMat(sink, Keep.right());
 
-                        }))
+                            return completeOKWithFuture(
+                                    graph.run(materializer),
+                                    Jackson.marshaller()
+                            );
+
+                        })
                 )
+        ));
     }
-
 }
