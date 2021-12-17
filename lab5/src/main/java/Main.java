@@ -14,7 +14,9 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 public class Main {
-    public static String HOST = "localhost"
+    public static String HOST = "localhost";
+    public static int PORT = 8080;
+
 
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("simplest-test");
@@ -25,10 +27,10 @@ public class Main {
                 .flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost(HOST, PORT),
                 materializer
         );
-        System.out.println("Server online at http://localhost:8080/\nPress RETURN to stop...");
+        System.out.println("Server online at http://" + HOST + ":"+ PORT +"/\nPress RETURN to stop...");
         System.in.read();
         binding
                 .thenCompose(ServerBinding::unbind)
