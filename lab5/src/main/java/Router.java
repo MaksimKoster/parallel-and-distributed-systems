@@ -3,30 +3,27 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.marshallers.jackson.Jackson;
-import akka.http.javadsl.model.*;
+import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.server.Route;
-
 import akka.japi.Pair;
 import akka.pattern.Patterns;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.*;
-import com.sun.xml.internal.ws.util.CompletedFuture;
-
-import static org.asynchttpclient.Dsl.*;
-import com.sun.xml.internal.ws.util.CompletedFuture;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Request;
-import org.asynchttpclient.Response;
 
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
-import java.util.regex.Pattern;
 
-import static akka.http.javadsl.server.Directives.*;
+import static akka.http.javadsl.server.Directives.completeOKWithFuture;
+import static akka.http.javadsl.server.Directives.get;
+import static akka.http.javadsl.server.Directives.parameter;
+import static akka.http.javadsl.server.Directives.route;
+import static org.asynchttpclient.Dsl.asyncHttpClient;
+import static org.asynchttpclient.Dsl.get;
 
 public class Router {
 
