@@ -16,10 +16,11 @@ import java.util.concurrent.CompletionStage;
 public class Main {
     public static String HOST = "localhost";
     public static int PORT = 8080;
+    public static String NAME_ACT = "simple-test";
 
 
     public static void main(String[] args) throws IOException {
-        ActorSystem system = ActorSystem.create("simplest-test");
+        ActorSystem system = ActorSystem.create(NAME_ACT);
         ActorRef cacheActor = system.actorOf(Props.create(CachingActor.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Http http = Http.get(system);
