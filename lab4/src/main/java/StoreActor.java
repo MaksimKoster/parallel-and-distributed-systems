@@ -6,6 +6,18 @@ public class StoreActor extends AbstractActor {
         private int packetID;
         private String res;
 
+        public StoreMessage(int packetID, String res){
+            this.packetID = packetID;
+            this.res = res;
+        }
+
+        public String getRes(){
+            return res;
+        }
+
+        public int getPacketID(){
+            return packetID;
+        }
 
     }
 
