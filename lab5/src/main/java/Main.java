@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.concurrent.CompletionStage;
 
 public class Main {
+    public static String HOST = "localhost"
+
     public static void main(String[] args) throws IOException {
         ActorSystem system = ActorSystem.create("simplest-test");
         ActorRef cacheActor = system.actorOf(Props.create(CachingActor.class));
