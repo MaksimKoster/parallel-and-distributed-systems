@@ -2,9 +2,9 @@ import scala.Serializable;
 
 public class FlightReduce implements Serializable {
     public float maxDelay;
-    public int countDelays;
-    public int countCancelled;
-    public int countFlights;
+    public float countDelays;
+    public float countCancelled;
+    public float countFlights;
 
     private static String FORMAT = "max:%3.0f,cancelled(%%):%6.2f,delay(%%):%6.2f";
 
