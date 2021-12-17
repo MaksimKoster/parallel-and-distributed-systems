@@ -3,7 +3,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.marshallers.jackson.Jackson;
-import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.*;
 import akka.http.javadsl.server.Route;
 
 import akka.japi.Pair;
@@ -13,8 +13,10 @@ import akka.stream.javadsl.*;
 import com.sun.xml.internal.ws.util.CompletedFuture;
 
 import static org.asynchttpclient.Dsl.*;
+import com.sun.xml.internal.ws.util.CompletedFuture;
 import org.asynchttpclient.AsyncHttpClient;
 import org.asynchttpclient.Request;
+import org.asynchttpclient.Response;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -79,7 +81,8 @@ public class Router {
 
                             Flow<HttpRequest, Long, NotUsed> result = m.map(res ->{
                                 cacheActor.tell(new CachingActor.StoreMessage(testUrl, res), ActorRef.noSender());
-                            })
+                                return res;
+                            });
 
                             Sink<Long, CompletionStage<Long>> sink = Sink.head();
                             RunnableGraph<CompletionStage<Long>> graph = Source.from(Collections.singletonList(HttpRequest.create())).via(result).toMat(sink, Keep.right());
