@@ -11,7 +11,7 @@ import java.util.Objects;
 public class App {
     static String APP_NAME = "lab3";
     static String INPUT_AIRPORT = "/home/maksim/'Рабочий стол'/parallel-and-distributed-systems/lab3/L_AIRPORT_ID.csv";
-    static String INPUT_FLIGHT = "/home/maksim/Рабочий стол/parallel-and-distributed-systems/lab3/664600583_T_ONTIME_sample.csv";
+    static String INPUT_FLIGHT = "/home/maksim/'Рабочий стол'/parallel-and-distributed-systems/lab3/664600583_T_ONTIME_sample.csv";
     static String OUTPUT = "output";
 
     public static void main(String[] args){
