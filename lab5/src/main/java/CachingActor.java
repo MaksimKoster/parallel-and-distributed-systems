@@ -18,6 +18,8 @@ public class CachingActor extends AbstractActor {
                     Long res = cache.get(m.getUrl());
                     if (res != null){
                         sender().tell(res, self());
+                    } else {
+                        sender().tell(-1, self());
                     }
                 })
                 .build();
