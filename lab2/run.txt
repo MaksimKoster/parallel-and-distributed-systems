@@ -1,4 +1,6 @@
 mvn package
 hadoop fs -rm -f -r output;
 export HADOOP_CLASSPATH=./target/hadoop-examples-1.0-SNAPSHOT.jar
-hadoop
+hadoop ru.bmstu.iu9.AirApp L_AIRPORT_ID.csv 664600583_T_ONTIME_sample.csv
+rm -rf output
+hadoop fs -copyToLocal output
