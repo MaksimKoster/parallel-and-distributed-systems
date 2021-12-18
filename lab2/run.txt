@@ -1,1 +1,4 @@
 mvn package
+hadoop fs -rm -f -r output;
+export HADOOP_CLASSPATH=./target/hadoop-examples-1.0-SNAPSHOT.jar
+hadoop 
