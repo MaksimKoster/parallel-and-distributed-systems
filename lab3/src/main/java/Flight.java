@@ -9,8 +9,8 @@ public class Flight implements Serializable {
 
     public static int INITIAL_AIRPORT_ID_INDEX = 11;
     public static int DEST_AIRPORT_ID_INDEX = 14;
-    public static int DELAY_INDEX = 18;
-    public static int CANCELLED_INDEX = 20;
+    public static int DELAY_INDEX = 17;
+    public static int CANCELLED_INDEX = 19;
 
     public Flight(int initialAirportID, int destAirportID, float delaytime, boolean cancelled){
         this.cancelled = cancelled;
