@@ -53,6 +53,7 @@ public class StoreActor extends AbstractActor {
                     store.put(m.getPacketID(), res);
                     System.out.println(RECIEVE_MESSAGE);
                 })
+                .match(GetMessage.class, req -> sender().tell(store.get(req.packetID), self()))
                 .build();
     }
 }
