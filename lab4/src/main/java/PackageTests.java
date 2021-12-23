@@ -8,5 +8,5 @@ public class PackageTests {
 
     private int packageid;
     private String jsScript;
-    private String FunctionName
+    private String FunctionName;
 }
