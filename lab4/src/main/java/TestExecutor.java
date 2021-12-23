@@ -37,5 +37,17 @@ public class TestExecutor extends AbstractActor {
         public int getPackageid() {
             return packageid;
         }
+
+        public String getExpected() {
+            return expected;
+        }
+
+        public String getJsScript() {
+            return jsScript;
+        }
+
+        public String getFunctionName() {
+            return functionName;
+        }
     }
 }
