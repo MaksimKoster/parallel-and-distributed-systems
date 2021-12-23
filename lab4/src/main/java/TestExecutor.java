@@ -19,6 +19,23 @@ public class TestExecutor extends AbstractActor {
         private int packageid;
         private String jsScript;
         private String functionName;
-        private ArrayList<PackageTests.Test> tests;
+        private Object[] params;
+        private String expected;
+
+        public Message(int packageid, String jsScript, String functionName,Object[] params, String expected){
+            this.packageid = packageid;
+            this.jsScript = jsScript;
+            this.functionName = functionName;
+            this.params = params;
+            this.expected = expected;
+        }
+
+        public Object[] getParams() {
+            return params;
+        }
+
+        public int getPackageid() {
+            return packageid;
+        }
     }
 }
