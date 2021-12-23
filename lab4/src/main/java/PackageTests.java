@@ -5,4 +5,8 @@ public class PackageTests {
     public static final String EXPECTED_RESULT = "expectedResult";
     public static final String PARAMS = "params";
     public static final String TEST_NAME = "testName";
+
+    private int packageid;
+    private String jsScript;
+    private String FunctionName
 }
