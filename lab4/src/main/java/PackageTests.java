@@ -31,6 +31,16 @@ public class PackageTests {
             this.params = params;
         }
 
-        
+        public String getExpectedResult(){
+            return expectedResult;
+        }
+
+        public String getTestName(){
+            return testName;
+        }
+
+        public Object[] getParams() {
+            return params;
+        }
     }
 }
