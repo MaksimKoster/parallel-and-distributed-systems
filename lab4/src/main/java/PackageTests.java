@@ -1,3 +1,8 @@
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+
 public class PackageTests {
     public static final String FUNCTION_NAME = "functionName";
     public static final String JS_SCRIPT = "jsScript";
@@ -9,5 +14,23 @@ public class PackageTests {
 
     private int packageid;
     private String jsScript;
-    private String FunctionName;
+    private String functionName;
+    private ArrayList<Test> tests;
+
+
+    public static class Test{
+        private Object[] params;
+        private String testName;
+        private String expectedResult;
+
+        @JsonCreator
+        Test(@JsonProperty(TEST_NAME) String testName, @JsonProperty(EXPECTED_RESULT) String expectedResult,
+             @JsonProperty(PARAMS) Object[] params){
+            this.testName = testName;
+            this.expectedResult = expectedResult;
+            this.params = params;
+        }
+
+        
+    }
 }
