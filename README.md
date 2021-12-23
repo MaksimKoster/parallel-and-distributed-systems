@@ -1,2 +1,3 @@
 # parallel-and-distributed-systems
-lab 1-7
+lab 1-6
+
