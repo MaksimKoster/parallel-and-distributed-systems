@@ -17,6 +17,15 @@ public class PackageTests {
     private String functionName;
     private ArrayList<Test> tests;
 
+    @JsonCreator
+    PackageTests(@JsonProperty(PACKAGE_ID) int packageid, @JsonProperty(JS_SCRIPT) String jsScript,
+                 @JsonProperty(FUNCTION_NAME) String functionName, @JsonProperty(TESTS) ArrayList<Test> tests) {
+        this.packageid = packageid;
+        this.jsScript = jsScript;
+        this.functionName = functionName;
+        this.jsScript = jsScript;
+    }
+
 
     public static class Test{
         private Object[] params;
