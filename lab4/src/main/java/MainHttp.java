@@ -44,8 +44,9 @@ public class MainHttp {
                                                 message.getJsScript(), t.getParams(), t.getExpectedResult(), ActorRef.noSender()
                                 );
                             }
+                            return complete(TEST_EXEC);
                         })
                 )
-        )
+        );
     }
 }
