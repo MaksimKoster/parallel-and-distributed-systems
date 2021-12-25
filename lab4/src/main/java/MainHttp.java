@@ -1,7 +1,10 @@
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.server.Route;
 
 import java.time.Duration;
+
+import static akka.http.javadsl.server.Directives.*;
 
 public class MainHttp {
     static final Duration TIMEOUT = Duration.ofSeconds(5);
@@ -17,5 +20,11 @@ public class MainHttp {
         this.routeActor = routeActor;
     }
 
-    public 
+    public Route createRoute(){
+        return route(
+                get(
+
+                )
+        )
+    }
 }
