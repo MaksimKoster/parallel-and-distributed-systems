@@ -34,7 +34,14 @@ public class PackageTests {
     public int getPackageid() {
         return packageid;
     }
-    
+
+    public String getJsScript() {
+        return jsScript;
+    }
+
+    public String getFunctionName() {
+        return functionName;
+    }
 
     public static class Test{
         private Object[] params;
