@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df846194-97be-424e-8ecb-dcc9f2eacbf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/part-r-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/part-r-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run_lab.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/output/_SUCCESS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/output/part-00000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/output/part-00001" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
