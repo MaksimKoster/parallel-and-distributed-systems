@@ -22,10 +22,7 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
             int airID;
             System.out.println(params[ID_INDEX]);
             System.out.println(params[ID_INDEX].split("\""));
-
             System.out.println(params[ID_INDEX].split("\"")[1]);
-
-            System.out.println(params[NAME_INDEX]);
             airID = Integer.parseInt(params[ID_INDEX].split("\"")[1]);
             airName = params[NAME_INDEX].split("\"")[0];
             context.write(new AirWritableComparable(airID, AIRPORT_INDICATOR), new Text(airName));
