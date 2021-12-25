@@ -1,5 +1,6 @@
 import akka.actor.*;
 import akka.http.javadsl.Http;
+import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class Main {
                 5,
                 Duration.ofMinutes(1),
                 Collections.<Class <? extends  Throwable>> singletonList(Exception.class));
-        ActorRef router = system.actorOf();
+        ActorRef router = system.actorOf(new RoundRobinPool(5).withSupervisorStrategy(strategy));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system, storeActor, router);
