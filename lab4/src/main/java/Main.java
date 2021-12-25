@@ -1,4 +1,5 @@
 import akka.actor.*;
+import akka.http.javadsl.Http;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -13,7 +14,8 @@ public class Main {
                 5,
                 Duration.ofMinutes(1),
                 Collections.<Class <? extends  Throwable>> singletonList(Exception.class));
-        ActorRef router = system.actorOf()
+        ActorRef router = system.actorOf();
+        final Http http = Http.get(system);
         )
     }
 }
