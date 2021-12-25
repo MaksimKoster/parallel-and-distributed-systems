@@ -36,12 +36,12 @@ public class MainHttp {
                         })
                 ),
                 post(
-                        () -> entity(Jackson.unmarshaller(PackageTests.class), (message) ->{
+                        () -> entity(Jackson.unmarshaller(PackageTests.class), (message) -> {
                             for(int i = 0; i < message.getTests().size(); ++i){
                                 PackageTests.Test t = message.getTests().get(i);
                                 routeActor.tell(
                                         new TestExecutor.Message(message.getPackageid(), message.getFunctionName(),
-                                                message.getJsScript(), t.getParams(), t.getExpectedResult(), ActorRef.noSender()
+                                                message.getJsScript(), t.getParams(), t.getExpectedResult()), ActorRef.noSender()
                                 );
                             }
                             return complete(TEST_EXEC);
