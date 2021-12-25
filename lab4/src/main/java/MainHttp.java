@@ -1,5 +1,6 @@
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 import akka.pattern.PatternsCS;
 
@@ -29,10 +30,12 @@ public class MainHttp {
                             int packageID = Integer.parseInt(parameter);
                             CompletionStage<Object> res = PatternsCS.ask(storeActor, new StoreActor.GetMessage(packageID), TIMEOUT);
                             return completeOKWithFuture(
-
+                                    res,
+                                    Jackson.marshaller()
                             );
                         })
-                )
+                ),
+                post()
         )
     }
 }
