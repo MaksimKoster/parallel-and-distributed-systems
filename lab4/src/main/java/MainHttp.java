@@ -1,8 +1,10 @@
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.server.Route;
+import akka.pattern.PatternsCS;
 
 import java.time.Duration;
+import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -24,7 +26,8 @@ public class MainHttp {
         return route(
                 get(
                         () -> parameter("packageID", (parameter) ->{
-                            int packageID = Integer.parseInt(parameter)
+                            int packageID = Integer.parseInt(parameter);
+                            CompletionStage<Object> res = PatternsCS.ask(storeActor, new StoreActor.GetMessage(packageID))
                         })
                 )
         )
