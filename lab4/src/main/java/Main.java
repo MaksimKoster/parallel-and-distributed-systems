@@ -1,7 +1,11 @@
+import akka.NotUsed;
 import akka.actor.*;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
+import akka.http.javadsl.model.HttpResponse;
 import akka.routing.RoundRobinPool;
 import akka.stream.ActorMaterializer;
+import akka.stream.javadsl.Flow;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -22,7 +26,7 @@ public class Main {
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system, storeActor, router);
-
+        final Flow<HttpRequest, HttpResponse, NotUsed> routerFlow = instance.createRoute().flow(system, materializer);
         )
     }
 }
