@@ -39,7 +39,7 @@ public class TestExecutor extends AbstractActor {
         private Object[] params;
         private String expected;
 
-        Message(int packageid, String jsScript, String functionName,Object[] params, String expected){
+        Message(int packageid, String jsScript, String functionName, Object[] params, String expected, ActorRef actorRef){
             this.packageid = packageid;
             this.jsScript = jsScript;
             this.functionName = functionName;
