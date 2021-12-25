@@ -12,7 +12,8 @@ public class Main {
         final SupervisorStrategy strategy = new OneForOneStrategy(
                 5,
                 Duration.ofMinutes(1),
-                Collections.<>
+                Collections.<Class <? extends  Throwable>> singletonList(Exception.class));
+        ActorRef router = system.actorOf()
         )
     }
 }
