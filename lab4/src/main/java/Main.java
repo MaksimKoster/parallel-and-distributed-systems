@@ -1,5 +1,6 @@
 import akka.actor.*;
 import akka.http.javadsl.Http;
+import akka.stream.ActorMaterializer;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -16,6 +17,8 @@ public class Main {
                 Collections.<Class <? extends  Throwable>> singletonList(Exception.class));
         ActorRef router = system.actorOf();
         final Http http = Http.get(system);
+        final ActorMaterializer materializer = ActorMaterializer.create(system);
+        
         )
     }
 }
