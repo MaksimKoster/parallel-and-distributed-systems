@@ -27,7 +27,10 @@ public class MainHttp {
                 get(
                         () -> parameter("packageID", (parameter) ->{
                             int packageID = Integer.parseInt(parameter);
-                            CompletionStage<Object> res = PatternsCS.ask(storeActor, new StoreActor.GetMessage(packageID))
+                            CompletionStage<Object> res = PatternsCS.ask(storeActor, new StoreActor.GetMessage(packageID), TIMEOUT);
+                            return completeOKWithFuture(
+
+                            );
                         })
                 )
         )
