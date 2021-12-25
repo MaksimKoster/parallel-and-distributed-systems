@@ -11,5 +11,11 @@ public class MainHttp {
     ActorRef storeActor;
     ActorRef routeActor;
 
-    
+    MainHttp(ActorSystem system, ActorRef storeActor, ActorRef routeActor){
+        this.system = system;
+        this.storeActor = storeActor;
+        this.routeActor = routeActor;
+    }
+
+    public 
 }
