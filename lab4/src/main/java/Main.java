@@ -30,7 +30,7 @@ public class Main {
         MainHttp instance = new MainHttp(system, storeActor, router);
         final Flow<HttpRequest, HttpResponse, NotUsed> routerFlow = instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
-
+                
         )
         )
     }
