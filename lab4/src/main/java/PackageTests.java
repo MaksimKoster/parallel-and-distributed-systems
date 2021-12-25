@@ -19,9 +19,9 @@ public class PackageTests {
     private ArrayList<Test> tests;
 
     @JsonCreator
-    PackageTests(@JsonProperty(PACKAGE_ID) int packageid, @JsonProperty(JS_SCRIPT) String jsScript,
+    PackageTests(@JsonProperty(PACKAGE_ID) int packageId, @JsonProperty(JS_SCRIPT) String jsScript,
                  @JsonProperty(FUNCTION_NAME) String functionName, @JsonProperty(TESTS) ArrayList<Test> tests) {
-        this.packageid = packageid;
+        this.packageid = packageId;
         this.tests = tests;
         this.functionName = functionName;
         this.jsScript = jsScript;
