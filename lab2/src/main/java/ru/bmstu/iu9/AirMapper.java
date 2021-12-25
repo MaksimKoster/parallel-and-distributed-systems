@@ -4,6 +4,7 @@ import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -16,10 +17,16 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
         String[] params = value.toString().split(REGEX);
+        FileWriter writer = new FileWriter("test.txt");
 
         if (key.get() > 0){
             String airName;
             int airID;
+
+            writer.write(params[ID_INDEX]);
+            writer.write(params[NAME_INDEX]);
+
+
             airID = Integer.parseInt(params[ID_INDEX].split("\"")[1]);
             airName = params[NAME_INDEX].split("\"")[0];
             context.write(new AirWritableComparable(airID, AIRPORT_INDICATOR), new Text(airName));
