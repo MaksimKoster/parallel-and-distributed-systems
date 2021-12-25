@@ -39,6 +39,9 @@ public class MainHttp {
                         () -> entity(Jackson.unmarshaller(PackageTests.class), (message) ->{
                             for(int i = 0; i < message.getTests().size(); ++i){
                                 PackageTests.Test t = message.getTests().get(i);
+                                routeActor.tell(
+                                        new TestExecutor.Message(message.getPackageID())
+                                );
                             }
                         })
                 )

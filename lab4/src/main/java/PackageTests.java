@@ -31,6 +31,10 @@ public class PackageTests {
         return tests;
     }
 
+    public int getPackageid() {
+        return packageid;
+    }
+    
 
     public static class Test{
         private Object[] params;
