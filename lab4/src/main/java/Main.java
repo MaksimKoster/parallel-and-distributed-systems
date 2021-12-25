@@ -1,5 +1,6 @@
 import akka.NotUsed;
 import akka.actor.*;
+import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.model.HttpRequest;
@@ -14,8 +15,8 @@ import java.util.Collections;
 import java.util.concurrent.CompletionStage;
 
 public class Main {
-    public String HOST = "localhost";
-    public int PORT = 8080;
+    public static String HOST = "localhost";
+    public static int PORT = 8080;
 
     public static void main(String[] args) throws IOException{
         ActorSystem system = ActorSystem.create("routes");
@@ -30,8 +31,13 @@ public class Main {
         MainHttp instance = new MainHttp(system, storeActor, router);
         final Flow<HttpRequest, HttpResponse, NotUsed> routerFlow = instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle(
-                
-        )
+                routerFlow,
+                ConnectHttp.toHost(HOST, PORT),
+                materializer
+        );
+        System.in.read();
+        binding.thenCompose(ServerBinding::unbind)
+                .thenAccept(unbound -> system.terminate());
         )
     }
 }
