@@ -40,8 +40,8 @@ public class MainHttp {
                             for(int i = 0; i < message.getTests().size(); ++i){
                                 PackageTests.Test t = message.getTests().get(i);
                                 routeActor.tell(
-                                        new TestExecutor.Message(message.getPackageid(), message.getFunctionName(),
-                                                message.getJsScript(), t.getParams(), t.getExpectedResult()), ActorRef.noSender()
+                                       new TestExecutor.Message(message.getPackageid(),message.getFunctionName(),message.getJsScript(),
+                                               t.getParams(), t.getExpectedResult()), ActorRef.noSender()
                                 );
                             }
                             return complete(TEST_EXEC);
