@@ -24,7 +24,9 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
             int airID;
 
             writer.write(params[ID_INDEX]);
+            writer.write(params[ID_INDEX].split("\"")[1]);
             writer.write(params[NAME_INDEX]);
+            writer.write(params[NAME_INDEX].split("\"")[0]);
 
 
             airID = Integer.parseInt(params[ID_INDEX].split("\"")[1]);
