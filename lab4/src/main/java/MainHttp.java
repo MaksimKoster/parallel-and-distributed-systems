@@ -26,7 +26,7 @@ public class MainHttp {
     public Route createRoute(){
         return route(
                 get(
-                        () -> parameter("packageID", (parameter) ->{
+                        () -> parameter("packageId", (parameter) ->{
                             int packageID = Integer.parseInt(parameter);
                             CompletionStage<Object> res = PatternsCS.ask(storeActor, new StoreActor.GetMessage(packageID), TIMEOUT);
                             return completeOKWithFuture(
