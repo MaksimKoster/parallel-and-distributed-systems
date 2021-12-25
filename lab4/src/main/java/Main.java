@@ -18,7 +18,7 @@ public class Main {
                 5,
                 Duration.ofMinutes(1),
                 Collections.<Class <? extends  Throwable>> singletonList(Exception.class));
-        ActorRef router = system.actorOf(new RoundRobinPool(5).withSupervisorStrategy(strategy).props());
+        ActorRef router = system.actorOf(new RoundRobinPool(5).withSupervisorStrategy(strategy).props(Props.create(TestExecutor.class, storeActor)));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         MainHttp instance = new MainHttp(system, storeActor, router);
