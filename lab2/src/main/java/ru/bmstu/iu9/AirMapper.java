@@ -12,7 +12,7 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     public static int AIRPORT_INDICATOR = 0;
     public static int ID_INDEX = 0;
     public static int NAME_INDEX = 1;
-    public static String REGEX = "\",\"";
+    public static String REGEX = "\"\",\"\"";
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
