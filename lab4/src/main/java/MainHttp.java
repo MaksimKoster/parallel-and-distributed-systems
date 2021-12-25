@@ -35,7 +35,11 @@ public class MainHttp {
                             );
                         })
                 ),
-                post()
+                post(
+                        () -> entity(Jackson.unmarshaller(PackageTests.class), (message) ->{
+
+                        })
+                )
         )
     }
 }
