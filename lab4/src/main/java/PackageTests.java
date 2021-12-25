@@ -2,6 +2,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class PackageTests {
     public static final String FUNCTION_NAME = "functionName";
@@ -24,6 +25,10 @@ public class PackageTests {
         this.tests = tests;
         this.functionName = functionName;
         this.jsScript = jsScript;
+    }
+
+    public ArrayList<Test> getTests() {
+        return tests;
     }
 
 
