@@ -8,6 +8,8 @@ import java.time.Duration;
 import java.util.Collections;
 
 public class Main {
+    public String HOST = "localhost";
+    public int PORT = 8080;
 
     public static void main(String[] args) throws IOException{
         ActorSystem system = ActorSystem.create("routes");
