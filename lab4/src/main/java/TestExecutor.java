@@ -39,12 +39,12 @@ public class TestExecutor extends AbstractActor {
         private Object[] params;
         private String expected;
 
-        Message(int packageid, String jsScript, String functionName, Object[] params, String expected){
+        Message(int packageid, String jsScript, String functionName, Object[] params, String expectedResult){
             this.packageid = packageid;
             this.jsScript = jsScript;
             this.functionName = functionName;
             this.params = params;
-            this.expected = expected;
+            this.expected = expectedResult;
         }
 
         public Object[] getParams() {
@@ -56,7 +56,7 @@ public class TestExecutor extends AbstractActor {
         }
 
         public String getExpected() {
-            return expected;
+            return expectedResult;
         }
 
         public String getJsScript() {
