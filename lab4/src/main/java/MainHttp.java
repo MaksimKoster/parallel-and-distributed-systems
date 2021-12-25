@@ -41,7 +41,7 @@ public class MainHttp {
                                 PackageTests.Test t = message.getTests().get(i);
                                 routeActor.tell(
                                         new TestExecutor.Message(message.getPackageid(), message.getFunctionName(),
-                                                message.getJsScript(), t.getParams(), t.getExpectedResult(), ActorRef.noSender());
+                                                message.getJsScript(), t.getParams(), t.getExpectedResult(), ActorRef.noSender())
                                 );
                             }
                         })
