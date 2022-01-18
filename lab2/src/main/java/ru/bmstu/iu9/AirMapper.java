@@ -13,7 +13,7 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     public static int NAME_INDEX = 1;
     public static String SPLIT = "\",";
 
-    protected String[] SplitDataToIdAirname
+    protected Pair<String, String> SplitDataToIdAirname
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
