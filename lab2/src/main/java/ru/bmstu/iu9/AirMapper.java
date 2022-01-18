@@ -1,5 +1,6 @@
 package ru.bmstu.iu9;
 
+import javafx.util.Pair;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -13,7 +14,9 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     public static int NAME_INDEX = 1;
     public static String SPLIT = "\",";
 
-    protected Pair<String, String> SplitDataToIdAirname
+    protected Pair<String,String> SplitDataToIdAirname(Text value){
+        
+    }
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
