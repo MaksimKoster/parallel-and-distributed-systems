@@ -21,7 +21,7 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
 
         if (key.get() > 0){
             int airID = Integer.parseInt(params[ID_INDEX].replaceAll("\"",""));
-            airName = params[NAME_INDEX];
+            String airName = params[NAME_INDEX];
             context.write(new AirWritableComparable(airID, AIRPORT_INDICATOR), new Text(airName));
         }
     }
