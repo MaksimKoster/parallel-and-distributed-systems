@@ -46,7 +46,8 @@ public class AnonymizeApp {
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
         try {
             HttpServer server = new HttpServer(http, actConf, zoo, port);
-            final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow;
+            final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow
+                    =
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
             System.exit(-1);
