@@ -26,6 +26,12 @@ public class HttpServer implements Watcher {
 
     @Override
     public void process(WatchedEvent watchedEvent) {
-
+        try {
+            zoo.getData(path, this, null);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (KeeperException e) {
+            e.printStackTrace();
+        }
     }
 }
