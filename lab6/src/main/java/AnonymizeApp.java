@@ -55,7 +55,8 @@ public class AnonymizeApp {
                     routeFlow,
                     ConnectHttp.toHost(HOST),
                     materializer
-            ))
+            ));
+            serversInfo.append(URL_HOST)
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
             System.exit(-1);
