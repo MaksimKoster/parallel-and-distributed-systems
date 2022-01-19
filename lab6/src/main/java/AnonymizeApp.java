@@ -8,6 +8,7 @@ public class AnonymizeApp {
             System.exit(1);
         }
         BasicConfigurator.configure();
+        System.out.println("start anonymize app");
         
     }
 }
