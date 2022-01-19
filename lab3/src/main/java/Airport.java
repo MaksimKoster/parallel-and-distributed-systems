@@ -18,8 +18,8 @@ public class Airport implements Serializable {
     protected Pair<Integer,String> SplitDataToCodeName(String data, String reg){
         Pair<Integer, String> ans;
         String[] params = data.split(",", 2);
-        params[CODE_INDEX].replaceAll(reg,"");
-        params[NAME_INDEX];
+        int code = params[CODE_INDEX].replaceAll(reg,"");
+        int name = params[NAME_INDEX];
     }
 
     public static Airport parseCSV(String csv){
