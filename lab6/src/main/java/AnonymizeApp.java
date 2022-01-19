@@ -69,7 +69,9 @@ public class AnonymizeApp {
             System.exit(-1);
         }
 
-        
+        for(CompletionStage<ServerBinding> binding : bindings){
+            
+        }
 
     }
 }
