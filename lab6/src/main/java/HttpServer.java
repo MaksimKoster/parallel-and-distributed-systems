@@ -5,6 +5,8 @@ import org.apache.zookeeper.*;
 
 import java.nio.charset.StandardCharsets;
 
+import static akka.http.javadsl.server.Directives.*;
+
 public class HttpServer implements Watcher {
     private static final String QUOTES = "";
     private static final String PARAM_URL = "url";
@@ -30,7 +32,7 @@ public class HttpServer implements Watcher {
     }
 
     public Route createRoute(){
-        return route
+        return route()
     }
 
 
