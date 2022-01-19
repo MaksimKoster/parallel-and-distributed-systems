@@ -9,7 +9,7 @@ final class MessageGetRandomServerUrl{
 
 public class ActorConf extends AbstractActor {
     private ArrayList<String> servers = new ArrayList<>();
-    private Random rand = New Random();
+    private Random rand = new Random();
 
     @Override
     public Receive createReceive() {
