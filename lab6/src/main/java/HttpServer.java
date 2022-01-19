@@ -28,9 +28,7 @@ public class HttpServer implements Watcher {
     public void process(WatchedEvent watchedEvent) {
         try {
             zoo.getData(path, this, null);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (KeeperException e) {
+        } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
         }
     }
