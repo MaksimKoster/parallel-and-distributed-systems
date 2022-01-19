@@ -49,7 +49,7 @@ public class HttpServer implements Watcher {
                                                 )
                                                 .thenCompose(
                                                         resPort -> http.singleRequest(HttpRequest.create(
-                                                                String.format("jj")
+                                                                String.format("jj");
                                                         ))
                                                 )
 
