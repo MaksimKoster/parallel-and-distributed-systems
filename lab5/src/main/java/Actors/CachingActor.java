@@ -34,7 +34,7 @@ public class CachingActor extends AbstractActor {
             return url;
         }
 
-        GetMessage(String url){
+        public GetMessage(String url){
             this.url = url;
         }
     }
@@ -51,7 +51,7 @@ public class CachingActor extends AbstractActor {
             return res;
         }
 
-        StoreMessage(String url, Long res){
+        public StoreMessage(String url, Long res){
             this.url = url;
             this.res = res;
         }
