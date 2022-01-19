@@ -13,6 +13,6 @@ public class AnonymizeApp {
         BasicConfigurator.configure();
         ActorSystem system = ActorSystem.create("lab6");
         ActorRef actConf = system.actorOf(Props.create(ActorSys.ActorConf.class));
-        final ActorMaterializer materializer
+        final ActorMaterializer materializer = ActorMaterializer.create(sys);
     }
 }
