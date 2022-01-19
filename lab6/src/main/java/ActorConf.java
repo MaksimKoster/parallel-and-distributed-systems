@@ -8,6 +8,7 @@ final class MessageGetRandomServerUrl{
 
 public class ActorConf extends AbstractActor {
     private ArrayList<String> servers = new ArrayList<>();
+    private Random rand = New Random();
 
     @Override
     public Receive createReceive() {
@@ -21,5 +22,5 @@ public class ActorConf extends AbstractActor {
 }
 
 public String getRandomServerPort(){
-    
+
 }
