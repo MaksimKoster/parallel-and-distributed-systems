@@ -11,7 +11,7 @@ public class HttpServer implements Watcher {
     private final ZooKeeper zoo;
     private final String path;
 
-    HttpServer(Http http, ActorRef actConf, ZooKeeper zoo, String port){
+    HttpServer(Http http, ActorRef actConf, ZooKeeper zoo, String port) throws InterruptedException, KeeperException {
         this.http = http;
         this.actConf = actConf;
         this.zoo = zoo;
