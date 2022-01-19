@@ -39,7 +39,7 @@ public class AnonymizeApp {
         final Http http = Http.get(system);
         ZooKeeper zoo = null;
         try {
-            zoo = new ZooKeeper(args[0],5000 ,null);
+            zoo = new ZooKeeper(args[0],TIMEOUT ,null);
             new ZooKeeperWatcher(zoo, actConf);
         } catch (InterruptedException | KeeperException | IOException e) {
             e.printStackTrace();
