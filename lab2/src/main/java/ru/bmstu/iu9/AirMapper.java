@@ -15,7 +15,7 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     public static String SPLIT = "\",";
 
     protected Pair<String,String> SplitDataToIdAirname(Text value, String reg){
-        
+        String[] params = value.toString().split(SPLIT);
     }
 
     @Override
