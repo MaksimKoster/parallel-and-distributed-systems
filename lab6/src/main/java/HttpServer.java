@@ -2,9 +2,13 @@ import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.server.Route;
+import akka.pattern.Patterns;
 import org.apache.zookeeper.*;
+import ActorSys.*;
+
 
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -12,6 +16,7 @@ public class HttpServer implements Watcher {
     private static final String QUOTES = "";
     private static final String PARAM_URL = "url";
     private static final String PARAM_COUNT = "count";
+    private static final Duration TIMEOUT = Duration.ofMillis(5000);
 
 
     private final Http http;
@@ -39,7 +44,14 @@ public class HttpServer implements Watcher {
                                 parameter(PARAM_COUNT, (count) ->
                                 {
                                     return completeWithFuture(count.equals("0") ?
-                                            http.singleRequest(HttpRequest.create(url)))
+                                            http.singleRequest(HttpRequest.create(url))
+                                                    : Patterns.ask(
+                                                            actConf,
+                                            new MessageGetRandomServerUrl(),
+                                            TIM
+                                            )
+
+                                            )
                                 }))
 
                 ))))

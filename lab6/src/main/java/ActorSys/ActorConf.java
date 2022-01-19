@@ -6,8 +6,8 @@ import akka.actor.Actor;
 import java.util.ArrayList;
 import java.util.Random;
 
-final class MessageGetRandomServerUrl{
-    MessageGetRandomServerUrl(){}
+public final class MessageGetRandomServerUrl{
+    public MessageGetRandomServerUrl(){}
 }
 
 public class ActorConf extends AbstractActor {
