@@ -28,7 +28,7 @@ public class AnonymizeApp {
         try {
             zoo = new ZooKeeper(args[0],5000 ,null);
             new ZooKeeperWatcher(zoo, actConf);
-        } catch (InterruptedException | KeeperException e) {
+        } catch (InterruptedException | KeeperException | IOException e) {
             e.printStackTrace();
         }
     }
