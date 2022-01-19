@@ -17,6 +17,8 @@ public class ZooKeeperWatcher implements Watcher {
         System.out.printf("servers data=%s", new String(data));
     }
 
+    
+
     @Override
     public void process(WatchedEvent watchedEvent) {
         try {
