@@ -11,7 +11,12 @@ public class HttpServer implements Watcher {
     private final ZooKeeper zoo;
     private String Path;
 
-    HttpServer(Http http, ActorRef actConf, ZooKeeper zoo, String port)
+    HttpServer(Http http, ActorRef actConf, ZooKeeper zoo, String port){
+        this.http = http;
+        this.actConf = actConf;
+        this.zoo = zoo;
+        this.Path = port
+    }
 
     @Override
     public void process(WatchedEvent watchedEvent) {
