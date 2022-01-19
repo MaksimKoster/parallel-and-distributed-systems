@@ -22,7 +22,7 @@ public class ZooKeeperWatcher implements Watcher {
     }
 
     public static String joinPath(String x){
-
+        return String.format(JOIN_FORM, SERVERS_PATH, x)
     }
 
     @Override
