@@ -30,6 +30,7 @@ public class AnonymizeApp {
             new ZooKeeperWatcher(zoo, actConf);
         } catch (InterruptedException | KeeperException | IOException e) {
             e.printStackTrace();
+            System.exit(-1);
         }
     }
 }
