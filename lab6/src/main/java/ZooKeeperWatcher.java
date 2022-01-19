@@ -14,7 +14,7 @@ public class ZooKeeperWatcher implements Watcher {
         this.zoo = zoo;
         this.actConfig = actConfig;
         byte[] data = this.zoo.getData(SERVERS_PATH, true, null);
-
+        
     }
 
     @Override
