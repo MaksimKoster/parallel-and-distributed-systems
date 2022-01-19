@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fd393c0-c65a-4491-9796-6dcee17f4894" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ActorSys/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ActorSys/HttpServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HttpServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
