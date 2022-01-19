@@ -22,12 +22,12 @@ public class AnonymizeApp {
             System.err.println("No port argument");
             System.exit(-1);
         }
+        String port = args[1];
         BasicConfigurator.configure();
         ActorSystem system = ActorSystem.create("lab6");
         ActorRef actConf = system.actorOf(Props.create(ActorSys.ActorConf.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Http http = Http.get(system);
-
         ZooKeeper zoo;
         try {
             zoo = new ZooKeeper(args[0],5000 ,null);
@@ -39,6 +39,7 @@ public class AnonymizeApp {
 
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
 
-        StringBuilder serversInfo = new StringBuilder("Servers online at ports\n")
+        StringBuilder serversInfo = new StringBuilder("Servers online at ports\n");
+
     }
 }
