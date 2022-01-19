@@ -26,7 +26,7 @@ public class AnonymizeApp {
 
     public static void main(String[] args) {
         if (args.length < 2){
-            System.err.println("No port argument");
+            System.err.println("Usage: AnonymizaApp localhost:port ports");
             System.exit(-1);
         }
         String port = "8080";
