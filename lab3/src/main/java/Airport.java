@@ -24,11 +24,11 @@ public class Airport implements Serializable {
     }
 
     public static Airport parseCSV(String csv){
-        Tuple2<Integer, String> = SplitDataToCodeName(csv, Split);
+        Tuple2<Integer, String> ans = SplitDataToCodeName(csv, Split);
         String[] list = csv.split(",", 2);
         return new Airport(
-                Integer.parseInt(list[CODE_INDEX].replaceAll("\"","")),
-                list[NAME_INDEX]
+                ans._1,
+                ans._2
         );
     }
 
