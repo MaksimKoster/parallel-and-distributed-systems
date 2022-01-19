@@ -30,7 +30,7 @@ public class HttpServer implements Watcher {
         this.http = http;
         this.actConf = actConf;
         this.zoo = zoo;
-        this.path = port;
+        this.path = HOST + port;
         zoo.create(
                 ZooKeeperWatcher.joinPath(path),
                 path.getBytes(),
