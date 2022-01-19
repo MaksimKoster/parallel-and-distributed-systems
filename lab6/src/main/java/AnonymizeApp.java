@@ -47,7 +47,7 @@ public class AnonymizeApp {
         try {
             HttpServer server = new HttpServer(http, actConf, zoo, port);
             final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow
-                    =
+                    = server.createRoute().flow(system, materializer);
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
             System.exit(-1);
