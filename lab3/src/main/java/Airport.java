@@ -25,7 +25,6 @@ public class Airport implements Serializable {
 
     public static Airport parseCSV(String csv){
         Pair<Integer, String> ans = SplitDataToCodeName(csv, Split);
-        String[] list = csv.split(",", 2);
         return new Airport(
                 ans.getKey(),
                 ans.getValue()
