@@ -21,8 +21,8 @@ public class ZooKeeperWatcher implements Watcher {
         System.out.printf("servers data=%s", new String(data));
     }
 
-    public static String joinPath(){
-        
+    public static String joinPath(String x){
+
     }
 
     @Override
