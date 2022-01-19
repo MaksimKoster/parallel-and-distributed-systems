@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0fd393c0-c65a-4491-9796-6dcee17f4894" name="Changes" comment="" />
+    <list default="true" id="0fd393c0-c65a-4491-9796-6dcee17f4894" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ActorSys/ActorConf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ActorSys/ActorConf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ActorSys/MessageSendServersList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ActorSys/MessageSendServersList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ZooKeeperWatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ZooKeeperWatcher.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +33,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
