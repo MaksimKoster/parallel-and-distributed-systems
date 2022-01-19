@@ -17,6 +17,7 @@ public class HttpServer implements Watcher {
     private static final String PARAM_URL = "url";
     private static final String PARAM_COUNT = "count";
     private static final Duration TIMEOUT = Duration.ofMillis(5000);
+    private static final String URL_PATTERN = 
 
 
     private final Http http;
@@ -49,7 +50,7 @@ public class HttpServer implements Watcher {
                                                 )
                                                 .thenCompose(
                                                         resPort -> http.singleRequest(HttpRequest.create(
-                                                                String.format("jj");
+                                                                String.format("jj")
                                                         ))
                                                 )
 
