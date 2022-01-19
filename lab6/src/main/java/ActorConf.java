@@ -22,8 +22,12 @@ public class ActorConf extends AbstractActor {
                                 getRandomServerPort(),
                                 Actor.noSender()
                         )
-
                 )
+                .match(
+                        MessageSendServersList.class,
+                        msg -> servers = msg.getServers()
+                )
+                .build();
     }
 
     public String getRandomServerPort(){
