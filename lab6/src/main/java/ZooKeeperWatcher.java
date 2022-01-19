@@ -34,6 +34,7 @@ public class ZooKeeperWatcher implements Watcher {
                 String serv = new String(zoo.getData(joinPathChild, false, null));
                 servers.add(serv);
             }
+            actConfig.tell(new MessageSendServersList(servers), ActorRef.noSender());
         } catch (InterruptedException | KeeperException e) {
             System.out.println(e);
         }
