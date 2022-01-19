@@ -9,6 +9,9 @@ public class ActorConf extends AbstractActor {
 
     @Override
     public Receive createReceive() {
-        return null;
+        return receiveBuilder()
+                .match(
+                        
+                )
     }
 }
