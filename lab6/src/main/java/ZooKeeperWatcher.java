@@ -17,12 +17,13 @@ public class ZooKeeperWatcher implements Watcher {
         System.out.printf("servers data=%s", new String(data));
     }
 
-    
+
 
     @Override
     public void process(WatchedEvent watchedEvent) {
         try {
             zoo.getChildren(SERVERS_PATH, this);
+            
         } catch (InterruptedException | KeeperException e) {
             System.out.println(e);
         }
