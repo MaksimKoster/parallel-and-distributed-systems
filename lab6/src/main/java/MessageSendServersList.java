@@ -1,5 +1,3 @@
-package ActorSys;
-
 import java.util.ArrayList;
 
 public class MessageSendServersList {
