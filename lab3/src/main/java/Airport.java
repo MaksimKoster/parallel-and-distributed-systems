@@ -13,7 +13,9 @@ public class Airport implements Serializable {
         this.name = name;
     }
 
-    protected SplitDataToCodeName
+    protected SplitDataToCodeName(String data, String reg){
+        
+    }
 
     public static Airport parseCSV(String csv){
         String[] list = csv.split(",", 2);
