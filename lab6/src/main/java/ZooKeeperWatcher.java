@@ -7,10 +7,11 @@ public class ZooKeeperWatcher implements Watcher {
     public static String SERVERS_PATH = "/servers";
 
     private ZooKeeper zoo;
-    private ActorRef actConfig
+    private ActorRef actConfig;
 
     ZooKeeperWatcher(ZooKeeper zoo, ActorRef actConfig){
-
+        this.zoo = zoo;
+        this.actConfig = actConfig;
     }
 
     @Override
