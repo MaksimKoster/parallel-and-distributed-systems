@@ -1,2 +1,6 @@
-package ActorSys;public class MessageGetRandomServerUrl {
+package ActorSys;
+
+public final class MessageGetRandomServerUrl {
+    public MessageGetRandomServerUrl() {
+    }
 }

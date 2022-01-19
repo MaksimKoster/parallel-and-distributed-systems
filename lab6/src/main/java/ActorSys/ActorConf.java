@@ -6,10 +6,6 @@ import akka.actor.Actor;
 import java.util.ArrayList;
 import java.util.Random;
 
-public final class MessageGetRandomServerUrl{
-    public MessageGetRandomServerUrl(){}
-}
-
 public class ActorConf extends AbstractActor {
     private ArrayList<String> servers = new ArrayList<>();
     private Random rand = new Random();
