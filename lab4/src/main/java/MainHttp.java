@@ -1,3 +1,6 @@
+import Actors.PackageTests;
+import Actors.StoreActor;
+import Actors.TestExecutor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.marshallers.jackson.Jackson;

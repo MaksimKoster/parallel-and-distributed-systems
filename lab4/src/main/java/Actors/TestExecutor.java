@@ -1,3 +1,6 @@
+package Actors;
+
+import Actors.StoreActor;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
@@ -5,7 +8,6 @@ import akka.japi.pf.ReceiveBuilder;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-import java.util.ArrayList;
 
 public class TestExecutor extends AbstractActor {
     ActorRef storeActore;
