@@ -1,5 +1,6 @@
 import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.server.Route;
 import org.apache.zookeeper.*;
 
@@ -32,7 +33,16 @@ public class HttpServer implements Watcher {
     }
 
     public Route createRoute(){
-        return route()
+        return route(path(QUOTES, () ->
+                route(get(
+                        () -> parameter(PARAM_URL, (url) ->
+                                parameter(PARAM_COUNT, (count) ->
+                                {
+                                    return completeWithFuture(count.equals("0") ?
+                                            http.singleRequest(HttpRequest.create()))
+                                }))
+
+                ))))
     }
 
 
