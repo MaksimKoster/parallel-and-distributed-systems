@@ -2,6 +2,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.stream.ActorMaterializer;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.zookeeper.KeeperException;
@@ -9,6 +10,8 @@ import org.apache.zookeeper.ZooKeeper;
 
 import javax.annotation.processing.Completion;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.concurrent.CompletionStage;
 
 public class AnonymizeApp {
 
@@ -34,6 +37,6 @@ public class AnonymizeApp {
             System.exit(-1);
         }
 
-        ArrayList<CompletionStage>
+        ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
     }
 }
