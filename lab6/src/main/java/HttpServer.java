@@ -1,8 +1,8 @@
 import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
+
+import java.nio.charset.StandardCharsets;
 
 public class HttpServer implements Watcher {
 
@@ -11,11 +11,17 @@ public class HttpServer implements Watcher {
     private final ZooKeeper zoo;
     private String Path;
 
-    HttpServer(Http http, ActorRef actConf, ZooKeeper zoo, String port){
+    HttpServer(Http http, ActorRef actConf, ZooKeeper zoo, String port) throws InterruptedException, KeeperException {
         this.http = http;
         this.actConf = actConf;
         this.zoo = zoo;
-        this.Path = port
+        this.Path = port;
+        zoo.create(
+                ZooKeeperWatcher.JOIN_FORM,
+                Path.getBytes(),
+                ZooDefs.Ids.OPEN_ACL_UNSAFE,
+                CreateMode.EPHEMERAL_SEQUENTIAL
+        );
     }
 
     @Override
