@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class MessageSendServersList {
     private final ArrayList<String> servers;
 
-    MessageSendServersList(ArrayList<String> serv){
+    public MessageSendServersList(ArrayList<String> serv){
         this.servers = serv;
     }
 
