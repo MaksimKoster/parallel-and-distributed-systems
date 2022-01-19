@@ -66,6 +66,7 @@ public class AnonymizeApp {
             System.in.read();
         } catch (IOException e) {
             e.printStackTrace();
+            System.exit(-1);
         }
 
 
