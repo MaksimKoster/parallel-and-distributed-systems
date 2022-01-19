@@ -15,6 +15,6 @@ public class AnonymizeApp {
         System.out.println("start anonymize app");
         ActorSystem sys = ActorSystem.create("lab6");
         ActorRef actConf = sys.actorOf(Props.create(ActorSysMes.ActorConf.class));
-        final ActorMaterializer materializer
+        final ActorMaterializer materializer = ActorMaterializer.create(sys);
     }
 }
