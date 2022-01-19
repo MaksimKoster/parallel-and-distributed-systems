@@ -42,7 +42,9 @@ public class AnonymizeApp {
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
         try {
             HttpServer server = new HttpServer(http, actConf, zoo, port);
-        }
+        } catch (InterruptedException | KeeperException | IOException e) {
+            e.printStackTrace();
+            System.exit(-1);
 
 
     }
