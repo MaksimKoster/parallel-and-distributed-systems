@@ -53,8 +53,8 @@ public class AnonymizeApp {
                     = server.createRoute().flow(system, materializer);
             bindings.add(http.bindAndHandle(
                     routeFlow,
-                    ConnectHttp.toHost(HOST);
-
+                    ConnectHttp.toHost(HOST),
+                    materializer
             ))
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
