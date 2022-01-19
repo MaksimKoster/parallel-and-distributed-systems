@@ -4,6 +4,8 @@ import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
 
+import java.nio.charset.StandardCharsets;
+
 public class HttpServer implements Watcher {
 
     private final Http http;
@@ -16,6 +18,11 @@ public class HttpServer implements Watcher {
         this.actConf = actConf;
         this.zoo = zoo;
         this.path = port;
+        zoo.create(
+                ZooKeeperWatcher,
+                path.getBytes(),
+                
+        )
     }
 
     @Override
