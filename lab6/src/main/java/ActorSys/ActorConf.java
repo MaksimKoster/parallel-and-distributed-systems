@@ -25,7 +25,8 @@ public class ActorConf extends AbstractActor {
                         )
                 )
                 .match(
-                        
+                        MessageSendServersList.class,
+                        msg -> servers = msg.getServers();
                 )
     }
 
