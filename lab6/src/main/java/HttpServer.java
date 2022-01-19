@@ -6,6 +6,10 @@ import org.apache.zookeeper.*;
 import java.nio.charset.StandardCharsets;
 
 public class HttpServer implements Watcher {
+    private static final String QUOTES = "";
+    private static final String PARAM_URL = "url";
+    private static final String PARAM_COUNT = "count";
+
 
     private final Http http;
     private final ActorRef actConf;
@@ -26,7 +30,7 @@ public class HttpServer implements Watcher {
     }
 
     public Route createRoute(){
-        
+        return route
     }
 
 
