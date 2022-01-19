@@ -1,5 +1,6 @@
 import akka.actor.ActorRef;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.server.Route;
 import org.apache.zookeeper.*;
 
 import java.nio.charset.StandardCharsets;
@@ -24,7 +25,10 @@ public class HttpServer implements Watcher {
         );
     }
 
-    
+    public Route createRoute(){
+        
+    }
+
 
     @Override
     public void process(WatchedEvent watchedEvent) {
