@@ -39,22 +39,25 @@ public class HttpServer implements Watcher {
 
     public Route createRoute(){
         return route(path(QUOTES, () ->
-                route(get(
-                        () -> parameter(PARAM_URL, (url) ->
-                                parameter(PARAM_COUNT, (count) ->
-                                {
-                                    return completeWithFuture(count.equals("0") ?
-                                            http.singleRequest(HttpRequest.create(url))
+                route(get( () -> parameter(PARAM_URL, (url) ->
+                        parameter(PARAM_COUNT, (count) ->
+                        {
+                            return completeWithFuture(count.equals("0") ? http.singleRequest(HttpRequest.create(url))
                                                     : Patterns.ask(
-                                                            actConf,
-                                            new MessageGetRandomServerUrl(),
-                                            TIM
+                                                    actConf,
+                                                    new MessageGetRandomServerUrl(),
+                                                    TIMEOUT
+                                            )
+                                            .thenCompose(
+                                                    resPort -> http.singleRequest(HttpRequest.create(
+                                                            String.format("jj")
+                                                    ))
                                             )
 
-                                            )
+                                            );
                                 }))
 
-                ))))
+                ))));
     }
 
 
