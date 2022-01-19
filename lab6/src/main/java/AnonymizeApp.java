@@ -38,5 +38,6 @@ public class AnonymizeApp {
         }
 
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
+        
     }
 }
