@@ -1,4 +1,6 @@
 import akka.actor.AbstractActor;
+import akka.actor.Actor;
+import akka.actor.ActorRef;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -16,7 +18,10 @@ public class ActorConf extends AbstractActor {
         receiveBuilder()
                 .match(
                         MessageGetRandomServerUrl.class,
-                        msg -> sender().tell()
+                        msg -> sender().tell(
+                                getRandomServerPort(),
+                                Actor.noSender()
+                        )
 
                 )
     }
