@@ -16,6 +16,7 @@
                     <archive>
                         <manifest>
                             <addClassPath>true</addClassPath>
+                            <mainclass>AnonymizeApp</mainclass>
                         </manifest>
                     </archive>
                 </configuration>
