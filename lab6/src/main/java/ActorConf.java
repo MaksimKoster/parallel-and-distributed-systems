@@ -9,7 +9,7 @@ public class ActorConf extends AbstractActor {
     public Receive createReceive() {
         receiveBuilder()
                 .match(
-                        
+
                 )
     }
 }
