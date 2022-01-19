@@ -28,7 +28,6 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
 
         if (key.get() > 0){
             Pair<Integer,String>  parsed = SplitDataToIdAirname(value, SPLIT);
-
             context.write(new AirWritableComparable(parsed.getKey(), AIRPORT_INDICATOR), new Text(parsed.getValue()));
         }
     }
