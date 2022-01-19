@@ -26,6 +26,6 @@ public class ActorConf extends AbstractActor {
 
     public getRandomPort(){
         int pos = rand.nextInt(servers.size());
-        
+        return servers.get(pos);
     }
 }
