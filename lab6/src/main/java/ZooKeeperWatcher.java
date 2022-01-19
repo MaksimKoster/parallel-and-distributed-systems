@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class ZooKeeperWatcher implements Watcher {
     public static String SERVERS_PATH = "/servers";
+    public static String JOIN_FORM = "%s/%s"
 
     private ZooKeeper zoo;
     private ActorRef actConfig;
