@@ -17,7 +17,7 @@ public class HttpServer implements Watcher {
         this.zoo = zoo;
         this.Path = port;
         zoo.create(
-                ZooKeeperWatcher.JOIN_FORM,
+                ZooKeeperWatcher.joinPath(Path),
                 Path.getBytes(),
                 ZooDefs.Ids.OPEN_ACL_UNSAFE,
                 CreateMode.EPHEMERAL_SEQUENTIAL
