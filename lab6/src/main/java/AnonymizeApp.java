@@ -7,6 +7,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
 
+import javax.annotation.processing.Completion;
 import java.io.IOException;
 
 public class AnonymizeApp {
@@ -33,6 +34,6 @@ public class AnonymizeApp {
             System.exit(-1);
         }
 
-        
+        ArrayList<CompletionStage>
     }
 }
