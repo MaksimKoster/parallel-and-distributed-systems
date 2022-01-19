@@ -15,15 +15,16 @@ public class Airport implements Serializable {
         this.name = name;
     }
 
-    private Pair<Integer, String> SplitDataToCodeName(String data, String reg){
+    private Tuple2<Integer, String> SplitDataToCodeName(String data, String reg){
         String[] params = data.split(",", 2);
         String codeStr = params[CODE_INDEX].replaceAll(reg,"");
         String nameAir = params[NAME_INDEX];
         int codeAir = Integer.parseInt(codeStr);
-        return new Pair<>(codeAir, nameAir);
+        return new Tuple2<>(codeAir, nameAir);
     }
 
     public static Airport parseCSV(String csv){
+        Tuple
         String[] list = csv.split(",", 2);
         return new Airport(
                 Integer.parseInt(list[CODE_INDEX].replaceAll("\"","")),
