@@ -20,6 +20,8 @@ import java.util.concurrent.CompletionStage;
 public class AnonymizeApp {
 
     public static int TIMEOUT = 5000;
+    public static String HOST = "localhost";
+    public static String URL_HOST = "http://" + HOST;
 
     public static void main(String[] args) {
         if (args.length < 2){
@@ -48,6 +50,10 @@ public class AnonymizeApp {
             HttpServer server = new HttpServer(http, actConf, zoo, port);
             final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow
                     = server.createRoute().flow(system, materializer);
+            bindings.add(http.bindAndHandle(
+                    routeFlow,
+
+            ))
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
             System.exit(-1);
