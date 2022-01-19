@@ -19,7 +19,7 @@ public class Airport implements Serializable {
         String codeStr = params[CODE_INDEX].replaceAll(reg,"");
         String nameAir = params[NAME_INDEX];
         int codeAir = Integer.parseInt(codeStr);
-        Tuple2<Integer, String> ans = new Tuple2<code, nameAir>;
+        Tuple2<Integer, String> ans = new Tuple2<codeAir, nameAir>;
     }
 
     public static Airport parseCSV(String csv){
