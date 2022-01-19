@@ -13,7 +13,11 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    
+                    <archive>
+                        <manifest>
+                            <addClassPath>true</addClassPath>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
