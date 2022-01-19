@@ -21,10 +21,12 @@ public class Main {
     public static void main(String[] args) throws IOException{
         ActorSystem system = ActorSystem.create("routes");
         ActorRef storeActor = system.actorOf(Props.create(StoreActor.class));
+
         final SupervisorStrategy strategy = new OneForOneStrategy(
                 5,
                 Duration.ofMinutes(1),
                 Collections.<Class <? extends  Throwable>> singletonList(Exception.class));
+        
         ActorRef router = system.actorOf(new RoundRobinPool(5).withSupervisorStrategy(strategy).props(Props.create(TestExecutor.class, storeActor)));
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
