@@ -16,6 +16,6 @@ public class AnonymizeApp {
         ActorRef actConf = system.actorOf(Props.create(ActorSys.ActorConf.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Http http = Http.get(system);
-
+        
     }
 }
