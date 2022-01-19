@@ -19,6 +19,8 @@ public class ZooKeeperWatcher implements Watcher {
 
     @Override
     public void process(WatchedEvent watchedEvent) {
-
+        try {
+            
+        }
     }
 }
