@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 import scala.Tuple2;
 import scala.Serializable;
 
@@ -7,6 +8,7 @@ public class Airport implements Serializable {
 
     public static int CODE_INDEX = 0;
     public static int NAME_INDEX = 1;
+    public static String Split = "\"";
 
     public Airport(int code, String name){
         this.code = code;
