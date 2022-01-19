@@ -32,7 +32,7 @@ public class ZooKeeperWatcher implements Watcher {
             for (String child: zoo.getChildren(SERVERS_PATH, this)){
                 String joinPathChild = String.format(JOIN_FORM, SERVERS_PATH, child);
                 String serv = new String(zoo.getData(joinPathChild, false, null));
-                servers.add(serv)
+                servers.add(serv);
             }
         } catch (InterruptedException | KeeperException e) {
             System.out.println(e);
