@@ -8,6 +8,7 @@ public class HttpServer implements Watcher {
     private final Http http;
     private final ActorRef actConf;
     private final ZooKeeper zoo;
+    private final String path;
 
     @Override
     public void process(WatchedEvent watchedEvent) {
