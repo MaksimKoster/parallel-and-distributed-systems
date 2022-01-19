@@ -14,7 +14,7 @@ public class Airport implements Serializable {
     }
 
     protected Pair<Integer,String> SplitDataToCodeName(String data, String reg){
-        Pair ans
+        Pair<Integer, String> ans;
         String[] params = data.split(",", 2);
         params[CODE_INDEX].replaceAll("\"","");
     }
