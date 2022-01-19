@@ -15,7 +15,7 @@ public class ActorConf extends AbstractActor {
     public Receive createReceive() {
         return receiveBuilder()
                 .match(
-
+                        Message
                 )
     }
 }
