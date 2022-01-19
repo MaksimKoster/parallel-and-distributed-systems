@@ -38,7 +38,7 @@ public class ZooKeeperWatcher implements Watcher {
             }
             actConfig.tell(new MessageSendServersList(servers), ActorRef.noSender());
         } catch (InterruptedException | KeeperException e) {
-            ;
+            e.printStackTrace();
         }
     }
 }
