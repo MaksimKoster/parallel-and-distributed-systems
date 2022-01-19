@@ -3,6 +3,9 @@ import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooKeeper;
+import scala.Array;
+
+import java.util.ArrayList;
 
 public class ZooKeeperWatcher implements Watcher {
     public static String SERVERS_PATH = "/servers";
@@ -23,6 +26,8 @@ public class ZooKeeperWatcher implements Watcher {
     public void process(WatchedEvent watchedEvent) {
         try {
             zoo.getChildren(SERVERS_PATH, this);
+
+            ArrayList<String> servers = new ArrayList<>();
             
         } catch (InterruptedException | KeeperException e) {
             System.out.println(e);
