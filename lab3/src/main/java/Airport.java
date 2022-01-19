@@ -15,7 +15,7 @@ public class Airport implements Serializable {
         this.name = name;
     }
 
-    private Tuple2<Integer, String> SplitDataToCodeName(String data, String reg){
+    private static Tuple2<Integer, String> SplitDataToCodeName(String data, String reg){
         String[] params = data.split(",", 2);
         String codeStr = params[CODE_INDEX].replaceAll(reg,"");
         String nameAir = params[NAME_INDEX];
