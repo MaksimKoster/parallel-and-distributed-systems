@@ -4,6 +4,7 @@ import akka.actor.Props;
 import akka.http.javadsl.Http;
 import akka.stream.ActorMaterializer;
 import org.apache.log4j.BasicConfigurator;
+import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooKeeper;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class AnonymizeApp {
 
     public static int TIMEOUT = 5000;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         if (args.length < 2){
             System.err.println("No port argument");
             System.exit(-1);
@@ -27,6 +28,8 @@ public class AnonymizeApp {
         try {
             zoo = new ZooKeeper(args[0],5000 ,null);
             new ZooKeeperWatcher(zoo, actConf);
+        } catch (InterruptedException | KeeperException e) {
+            e.printStackTrace();
         }
     }
 }
