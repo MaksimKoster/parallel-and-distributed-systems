@@ -12,7 +12,7 @@ public class ZooKeeperWatcher implements Watcher {
     ZooKeeperWatcher(ZooKeeper zoo, ActorRef actConfig){
         this.zoo = zoo;
         this.actConfig = actConfig;
-        byte[] data = 
+        byte[] data = this.zoo.getData(SERVERS_PATH, true, null)
     }
 
     @Override
