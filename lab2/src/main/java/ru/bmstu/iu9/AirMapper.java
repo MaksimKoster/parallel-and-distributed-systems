@@ -27,8 +27,9 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException{
 
         if (key.get() > 0){
-            Pair parsed = SplitDataToIdAirname(value, SPLIT);
-            context.write(new AirWritableComparable(airID, AIRPORT_INDICATOR), new Text(airName));
+            Pair<Integer,String>  parsed = SplitDataToIdAirname(value, SPLIT);
+
+            context.write(new AirWritableComparable(parsed.getKey(), AIRPORT_INDICATOR), new Text(parsed.getValue()));
         }
     }
 }
