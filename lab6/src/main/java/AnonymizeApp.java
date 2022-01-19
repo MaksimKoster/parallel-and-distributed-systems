@@ -25,10 +25,10 @@ public class AnonymizeApp {
     public static String URL_HOST = "http://" + HOST;
 
     public static void main(String[] args) {
-//        if (args.length < 2){
-//            System.err.println("No port argument");
-//            System.exit(-1);
-//        }
+        if (args.length < 2){
+            System.err.println("No port argument");
+            System.exit(-1);
+        }
         String port = "8080";
         StringBuilder serversInfo = new StringBuilder("Servers online at ports\n");
 
