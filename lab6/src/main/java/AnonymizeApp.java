@@ -29,7 +29,7 @@ public class AnonymizeApp {
             System.err.println("Usage: AnonymizaApp localhost:port ports");
             System.exit(-1);
         }
-        String port = [1];
+        String port = args[1];
         StringBuilder serversInfo = new StringBuilder("Servers online at ports\n");
 
         BasicConfigurator.configure();
