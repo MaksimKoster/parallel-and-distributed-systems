@@ -69,8 +69,11 @@ public class AnonymizeApp {
             System.exit(-1);
         }
 
+        System.out.println("Press Enter to stop\n"+ serversInfo );
+
         for(CompletionStage<ServerBinding> binding : bindings){
-            
+            binding.thenAccept(ServerBinding::unbind)
+                    .thenAccept(inbound -> system.terminate());
         }
 
     }
