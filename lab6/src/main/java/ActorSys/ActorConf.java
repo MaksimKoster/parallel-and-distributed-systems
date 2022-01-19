@@ -1,6 +1,7 @@
+package ActorSys;
+
 import akka.actor.AbstractActor;
 import akka.actor.Actor;
-import akka.actor.ActorRef;
 
 import java.util.ArrayList;
 import java.util.Random;
