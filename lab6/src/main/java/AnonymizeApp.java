@@ -1,5 +1,6 @@
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import org.apache.log4j.BasicConfigurator;
 
 public class AnonymizeApp {
@@ -10,6 +11,6 @@ public class AnonymizeApp {
         }
         BasicConfigurator.configure();
         ActorSystem system = ActorSystem.create("lab6");
-        ActorRef actConf
+        ActorRef actConf = system.actorOf(Props.create(ActorSys.ActorConf.class));
     }
 }
