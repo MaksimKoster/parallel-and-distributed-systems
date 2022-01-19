@@ -1,2 +1,4 @@
-package ActorSys;public class ActorConf {
+package ActorSys;
+
+public class ActorConf {
 }
