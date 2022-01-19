@@ -38,6 +38,7 @@ public class AnonymizeApp {
         }
 
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
-        
+
+        StringBuilder serversInfo = new StringBuilder("Servers online at ports\n")
     }
 }
