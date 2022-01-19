@@ -14,9 +14,12 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
     public static int NAME_INDEX = 1;
     public static String SPLIT = "\",";
 
-    protected Pair<String,String> SplitDataToIdAirname(Text value, String reg){
+    protected Pair<Integer,String> SplitDataToIdAirname(Text value, String reg){
+        Pair<Integer, String> ans;
         String[] params = value.toString().split(reg);
-        
+        int airID = Integer.parseInt(params[ID_INDEX].replaceAll("\"",""));
+        String airName = params[NAME_INDEX];
+        ans = new Pair<>(airID, airName);
     }
 
     @Override
