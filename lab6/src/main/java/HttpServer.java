@@ -16,6 +16,7 @@ public class HttpServer implements Watcher {
     private static final String QUOTES = "";
     private static final String PARAM_URL = "url";
     private static final String PARAM_COUNT = "count";
+    private static final String HOST = "localhost:";
     private static final Duration TIMEOUT = Duration.ofMillis(5000);
     private static final String URL_PATTERN = "http://%s/?url=%s&count=%d";
 
