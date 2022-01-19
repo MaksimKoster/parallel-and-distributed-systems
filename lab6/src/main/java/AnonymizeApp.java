@@ -32,5 +32,7 @@ public class AnonymizeApp {
             e.printStackTrace();
             System.exit(-1);
         }
+
+        
     }
 }
