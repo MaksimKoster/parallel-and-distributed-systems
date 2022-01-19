@@ -23,6 +23,8 @@ public class AnonymizeApp {
             System.exit(-1);
         }
         String port = args[1];
+        StringBuilder serversInfo = new StringBuilder("Servers online at ports\n");
+        
         BasicConfigurator.configure();
         ActorSystem system = ActorSystem.create("lab6");
         ActorRef actConf = system.actorOf(Props.create(ActorSys.ActorConf.class));
@@ -38,8 +40,6 @@ public class AnonymizeApp {
         }
 
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
-
-        StringBuilder serversInfo = new StringBuilder("Servers online at ports\n");
 
     }
 }
