@@ -20,6 +20,7 @@ public class AirMapper extends Mapper<LongWritable, Text, AirWritableComparable,
         int airID = Integer.parseInt(params[ID_INDEX].replaceAll("\"",""));
         String airName = params[NAME_INDEX];
         ans = new Pair<>(airID, airName);
+        return ans;
     }
 
     @Override
