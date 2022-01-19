@@ -28,7 +28,9 @@ public class ZooKeeperWatcher implements Watcher {
             zoo.getChildren(SERVERS_PATH, this);
 
             ArrayList<String> servers = new ArrayList<>();
-            for (String child: zoo.getChildren(SERVERS_PATH, this))
+            for (String child: zoo.getChildren(SERVERS_PATH, this)){
+                servers.add(new String())
+            }
         } catch (InterruptedException | KeeperException e) {
             System.out.println(e);
         }
