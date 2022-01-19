@@ -6,4 +6,8 @@ public class MessageSendServersList {
     MessageSendServersList(ArrayList<String> serv){
         this.servers = serv;
     }
+
+    public ArrayList<String> getServers(){
+        
+    }
 }
