@@ -24,13 +24,13 @@ public class AnonymizeApp {
         }
         String port = args[1];
         StringBuilder serversInfo = new StringBuilder("Servers online at ports\n");
-        
+
         BasicConfigurator.configure();
         ActorSystem system = ActorSystem.create("lab6");
         ActorRef actConf = system.actorOf(Props.create(ActorSys.ActorConf.class));
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         final Http http = Http.get(system);
-        ZooKeeper zoo;
+        ZooKeeper zoo = null;
         try {
             zoo = new ZooKeeper(args[0],5000 ,null);
             new ZooKeeperWatcher(zoo, actConf);
@@ -40,6 +40,9 @@ public class AnonymizeApp {
         }
 
         ArrayList<CompletionStage<ServerBinding>> bindings = new ArrayList<>();
+        try {
+        HttpServer server = new HttpServer(http, actConf, zoo, port);
+
 
     }
 }
