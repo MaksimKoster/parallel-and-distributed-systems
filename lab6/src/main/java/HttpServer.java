@@ -39,7 +39,7 @@ public class HttpServer implements Watcher {
                                 parameter(PARAM_COUNT, (count) ->
                                 {
                                     return completeWithFuture(count.equals("0") ?
-                                            http.singleRequest(HttpRequest.create()))
+                                            http.singleRequest(HttpRequest.create(url)))
                                 }))
 
                 ))))
