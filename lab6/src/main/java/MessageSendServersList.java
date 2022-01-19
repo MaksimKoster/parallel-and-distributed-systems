@@ -8,6 +8,6 @@ public class MessageSendServersList {
     }
 
     public ArrayList<String> getServers(){
-        return  servers;
+        return servers;
     }
 }
