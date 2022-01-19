@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df846194-97be-424e-8ecb-dcc9f2eacbf5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bmstu/iu9/AirMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bmstu/iu9/AirMapper.java" afterDir="false" />
-    </list>
+    <list default="true" id="df846194-97be-424e-8ecb-dcc9f2eacbf5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
