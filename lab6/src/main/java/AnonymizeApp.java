@@ -7,6 +7,9 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.zookeeper.ZooKeeper;
 
 public class AnonymizeApp {
+
+    public static int TIMEOUT = 5000;
+
     public static void main(String[] args){
         if (args.length < 2){
             System.err.println("No port argument");
@@ -19,8 +22,6 @@ public class AnonymizeApp {
         final Http http = Http.get(system);
 
         ZooKeeper zoo;
-        try {
-            
-        }
+        zoo = new ZooKeeper(args[0], ,null);
     }
 }
