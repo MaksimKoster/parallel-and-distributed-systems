@@ -56,7 +56,7 @@ public class AnonymizeApp {
                     ConnectHttp.toHost(HOST),
                     materializer
             ));
-            serversInfo.append(URL_HOST)
+            serversInfo.append(URL_HOST + port +"\n");
         } catch (InterruptedException | KeeperException e) {
             e.printStackTrace();
             System.exit(-1);
