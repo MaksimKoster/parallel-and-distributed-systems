@@ -62,6 +62,8 @@ public class AnonymizeApp {
             System.exit(-1);
         }
 
+        System.in.read();
+
 
     }
 }
