@@ -6,7 +6,12 @@ import org.apache.zookeeper.ZooKeeper;
 public class ZooKeeperWatcher implements Watcher {
     public static String SERVERS_PATH = "/servers";
 
-    ZooKeeperWatcher(ZooKeeper zoo, ActorRef actConfig)
+    private ZooKeeper zoo;
+    private ActorRef actConfig
+
+    ZooKeeperWatcher(ZooKeeper zoo, ActorRef actConfig){
+
+    }
 
     @Override
     public void process(WatchedEvent watchedEvent) {
