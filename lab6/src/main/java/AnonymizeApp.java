@@ -62,6 +62,8 @@ public class AnonymizeApp {
             System.exit(-1);
         }
 
+        System.out.println("Press Enter to stop\n"+ serversInfo);
+
         try {
             System.in.read();
         } catch (IOException e) {
