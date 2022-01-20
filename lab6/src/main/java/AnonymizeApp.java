@@ -73,7 +73,7 @@ public class AnonymizeApp {
 
         for(CompletionStage<ServerBinding> binding : bindings){
             binding.thenAccept(ServerBinding::unbind)
-                    .thenAccept(inbound -> system.terminate());
+                    .thenAccept(unbound -> system.terminate());
         }
 
     }
